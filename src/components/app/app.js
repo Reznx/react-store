@@ -5,7 +5,9 @@ import { Route, Switch } from "react-router-dom";
 
 const App = () => {
   return (
+    // Switch делает так, что срабатывает только один роутер, остальные игнорируются
     <Switch>
+      {/* exact - только точное совпадение '/' */}
       <Route path="/" component={Home} exact />
       <Route path="/cart" component={Cart} />
     </Switch>

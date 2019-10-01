@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./book-list.css";
 import BookListItem from "../book-list-item";
+// Для того, чтобы получить доступ к редакс стору
+import { connect } from "react-redux";
 
 class BookList extends Component {
   render() {
@@ -19,4 +21,13 @@ class BookList extends Component {
   }
 }
 
-export default BookList;
+// Читаем книги из нашего редакс стора
+const mapStateToProps = ({ books }) => {
+  return {
+    books
+  };
+};
+
+// Connect - функция, которая возвращает функцию
+// Экспортируем результат функции connect()
+export default connect(mapStateToProps)(BookList);
